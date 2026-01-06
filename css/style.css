@@ -67,6 +67,25 @@ body {
   transition: transform 4s ease, opacity 4s ease;
 }
 
+.guest-name {
+  margin-top: 12px;
+  padding: 6px 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: #ffffff;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.45); /* ini kunci kebaca */
+  border-radius: 20px;
+
+  display: inline-block;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+
 /* Gaya untuk konten popup */
 .popup-container {
   display: flex;
