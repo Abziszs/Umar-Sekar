@@ -38,7 +38,7 @@
         <div class="popup-content">
           <h2 class="example1" data-aos="fade-down" data-aos-delay="800">The Wedding Of</h2>
           <h1 data-aos="zoom-in" data-aos-delay="0" data-aos-duration="2000">Umar  <span> &</span> Sekar .</h1>
-          <p id="guest-name">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <p id="guest-name" style="margin: 1rem 0; font-size: 1rem;">Kepada Yth. Bapak/Ibu/Saudara/i</p>
           <button data-aos="fade-up" data-aos-delay="800" class="close"><i data-feather="mail" style="vertical-align: middle; "></i> Buka Undangan</button>
           <audio id="popupAudio" src="audio/song.mp3"></audio> <!-- Ganti dengan path file audio yang sesuai -->
         </div>
@@ -381,15 +381,21 @@
       </script>
       
      <script>
-  const params = new URLSearchParams(window.location.search);
-  const guest = params.get("to");
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("to");
 
-  if (guest) {
-    const decodedName = guest.replace(/\+/g, " ");
-    document.getElementById("guest-name").innerHTML =
-      `Kepada Yth. <strong>${decodedName}</strong>`;
-  }
+    if (guest) {
+      const decodedName = guest.replace(/\+/g, " ");
+      const el = document.getElementById("guest-name");
+
+      if (el) {
+        el.innerHTML = `Kepada Yth. <strong>${decodedName}</strong>`;
+      }
+    }
+  });
 </script>
+
 
   </body>
 </html>
